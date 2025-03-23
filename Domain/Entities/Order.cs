@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Domain.Entities
@@ -17,6 +18,7 @@ namespace Domain.Entities
 
         private readonly List<IDomainEvent> _domainEvents = new();
 
+        [JsonIgnore]
         public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
 
         // EF Core için parametresiz constructor
